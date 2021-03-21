@@ -8,7 +8,7 @@ import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 
-	"github.com/theflyingcodr/backbone/api/rest"
+	"github.com/theflyingcodr/backbone/transports/rest"
 	"github.com/theflyingcodr/backbone/data/mysql"
 	"github.com/theflyingcodr/backbone/service"
 )

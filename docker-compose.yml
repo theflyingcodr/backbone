@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  rest-server:
+    container_name: rest-server
+    image: local.rest-server
+    build:
+      context: .
+    environment:
+      - MY_ENV=test
+    ports:
+      - "3001:3001"
