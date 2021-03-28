@@ -38,6 +38,9 @@ func (t *thing) Things(ctx context.Context) ([]*backbone.Thing, error) {
 }
 
 func (t *thing) Create(ctx context.Context, req backbone.ThingCreate) (*backbone.Thing, error) {
+	if err := req.Validate().Err(); err != nil{
+		return nil, err
+	}
 	// TODO: implement your logic
 	return nil, nil
 }

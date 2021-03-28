@@ -3,6 +3,7 @@ package backbone
 import (
 	"context"
 	"time"
+	"github.com/theflyingcodr/govalidator"
 )
 
 // Thing defines a single thing.
@@ -16,6 +17,12 @@ type Thing struct {
 // ThingArgs are used to retrieve a single thing.
 type ThingArgs struct {
 	ThingID int64 `param:"thingID" query:"thingID"`
+}
+
+// Validate enforces ThingArgs rules.
+func (t ThingArgs) Validate() validator.ErrValidation{
+	return validator.New().
+		Validate("thingID", validator.MinInt64(t.ThingID,1))
 }
 
 // ThingCreate is used to create a new thing.
