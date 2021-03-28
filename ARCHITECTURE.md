@@ -1,6 +1,6 @@
 # Architecture
 
-This uses a tried and tested simple 3 tier architecture with an abstraction between each layer provided by interfaces.
+This uses a tried and tested simple [3 layer architecture](https://www.tutisani.com/software-architecture/global-three-layer-architecture.html) with an abstraction between each layer provided by interfaces.
 
 ![3TierArch](https://user-images.githubusercontent.com/17311972/112766485-e5d55180-9009-11eb-8471-47addefa8854.png)
 
@@ -62,7 +62,7 @@ func (t *thing) Create(ctx context.Context, req backbone.ThingCreate) (*backbone
 The Service key responsibility is enforcing and implementing business rules, but it also has a few other potential tasks:
 
 * Raise application events
-* Orchestrates the data calls, if any ie which data methods to call and when.
+* Orchestrates the data calls, if any, ie which data methods to call and when.
 
 The service should be unchanged by either the transport or data layer changing ie if you decide to add caching, the service should be agnostic to this, instead the data layer should orchestrate this.
 
@@ -95,9 +95,7 @@ An example flow of a data read flow is below, you try tor ead from the cache sto
 
 ![cache_flow](https://user-images.githubusercontent.com/17311972/112767410-86c60b80-900e-11eb-9296-b28598d258e5.png)
 
+There is an example implementation of this in the [example project](example/data/thing_facade.go)
 ### Accepts
 
 The data constructor will at least accept a data store interface / object, this could be a sql.DB interface, grpc client or an http client for example.
-
-
-
