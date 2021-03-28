@@ -89,12 +89,11 @@ In order to do this, a pattern I use is a Facade. It will implement one of the d
 
 This facade will then orchestrate the calls between the data and cache layer, an example is below.
 
-[image]
+![data_facade](https://user-images.githubusercontent.com/17311972/112767402-80379400-900e-11eb-8488-8237c9446488.png)
 
 An example flow of a data read flow is below, you try tor ead from the cache store first, fall back to the db and then cache the data (this caching could be done async as well).
 
-[image]
-
+![cache_flow](https://user-images.githubusercontent.com/17311972/112767410-86c60b80-900e-11eb-9296-b28598d258e5.png)
 
 ### Accepts
 
