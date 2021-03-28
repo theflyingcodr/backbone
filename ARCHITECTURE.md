@@ -2,6 +2,7 @@
 
 This uses a tried and tested simple 3 tier architecture with an abstraction between each layer provided by interfaces.
 
+![3TierArch](https://user-images.githubusercontent.com/17311972/112766485-e5d55180-9009-11eb-8471-47addefa8854.png)
 
 
 As shown in the above diagram, it has 3 layers, Transport, Service & Data.
