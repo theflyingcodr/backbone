@@ -81,6 +81,21 @@ Each data store type should have a package added under the data folder ie data/m
 
 As with the transport layer, this layer should be dumb, no business logic should be here, instead, it's only concerned with adding or retrieving data.
 
+### Caching facades
+
+A common requirement is to cache expensive / long running db calls, this can be achieved with a simple inmemory cache or a slightly more complex but reliable Redis cache if running a distributed server.
+
+In order to do this, a pattern I use is a Facade. It will implement one of the data interfaces and accept at least two data store interfaces, one for each store type.
+
+This facade will then orchestrate the calls between the data and cache layer, an example is below.
+
+[image]
+
+An example flow of a data read flow is below, you try tor ead from the cache store first, fall back to the db and then cache the data (this caching could be done async as well).
+
+[image]
+
+
 ### Accepts
 
 The data constructor will at least accept a data store interface / object, this could be a sql.DB interface, grpc client or an http client for example.
