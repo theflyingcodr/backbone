@@ -8,6 +8,10 @@ Of course, layout is a subjective thing so in no way is this "the perfect go lay
 
 Backbone is a template for a go server, this is what I use to bootstrap all my projects and adheres as closely as I can get to DDD and Hexagonal architecture.
 
+## Architecture
+
+This uses a simple [3 layer architecture](https://www.tutisani.com/software-architecture/global-three-layer-architecture.html) which is detailed in the [ARCHITECTURE](ARCHITECTURE.md) page.
+
 ## WIP
 
 This isn't yet finished, I'll be adding a few things over time:
