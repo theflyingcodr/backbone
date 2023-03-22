@@ -7,12 +7,11 @@ import (
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-
-	"github.com/theflyingcodr/things/data"
-	"github.com/theflyingcodr/things/data/inmemory"
-	"github.com/theflyingcodr/things/transports/rest"
-	"github.com/theflyingcodr/things/data/mysql"
-	"github.com/theflyingcodr/things/service"
+	"github.com/theflyingcodr/things/internal/data"
+	"github.com/theflyingcodr/things/internal/data/inmemory"
+	"github.com/theflyingcodr/things/internal/data/mysql"
+	"github.com/theflyingcodr/things/internal/service"
+	"github.com/theflyingcodr/things/internal/transports/rest"
 )
 
 func main() {

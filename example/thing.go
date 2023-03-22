@@ -1,10 +1,11 @@
-// Package echoserver is the main domain package and contains all
+// Package things is the main domain package and contains all
 // models, validation and interface definitions.
 package things
 
 import (
 	"context"
 	"time"
+
 	validator "github.com/theflyingcodr/govalidator"
 )
 
@@ -22,9 +23,9 @@ type ThingArgs struct {
 }
 
 // Validate will ensure ThingArgs meet expectations.
-func (t *ThingArgs) Validate() validator.ErrValidation{
+func (t *ThingArgs) Validate() validator.ErrValidation {
 	return validator.New().
-		Validate("thingID", validator.MinUInt64(t.ThingID,1))
+		Validate("thingID", validator.MinUInt64(t.ThingID, 1))
 }
 
 // ThingCreate is used to create a new thing.
@@ -35,9 +36,9 @@ type ThingCreate struct {
 }
 
 // Validate will ensure ThingCreate requests meet expectations.
-func (t *ThingCreate) Validate() validator.ErrValidation{
+func (t *ThingCreate) Validate() validator.ErrValidation {
 	return validator.New().
-		Validate("name", validator.Length(t.Name,2,25))
+		Validate("name", validator.Length(t.Name, 2, 25))
 }
 
 // ThingUpdate is used to update a thing.
@@ -48,9 +49,9 @@ type ThingUpdate struct {
 }
 
 // Validate will ensure ThingUpdate requests meet expectations.
-func (t *ThingUpdate) Validate() validator.ErrValidation{
+func (t *ThingUpdate) Validate() validator.ErrValidation {
 	return validator.New().
-		Validate("name", validator.Length(t.Name,2,25))
+		Validate("name", validator.Length(t.Name, 2, 25))
 }
 
 // ThingService is used to enforce business rules, orchestrate data store calls and raise business events.
